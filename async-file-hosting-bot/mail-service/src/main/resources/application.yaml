@@ -1,0 +1,25 @@
+server:
+  port: 8083
+
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    protocol: smtp
+    username:
+    password:
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+      ssl.trust: smtp.gmail.com
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username:
+    password:
+    queues:
+      registration-mail: registration_mail
+
+service:
+  activation:
+    uri: http://127.0.0.1:8082/user/activation?id={id}
